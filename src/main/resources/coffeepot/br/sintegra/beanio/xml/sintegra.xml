@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2011/01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2011/01 http://www.beanio.org/2011/01/mapping.xsd">
+    <stream name="Sintegra" format="fixedlength">        
+        <typeHandler name="finalidadeArquivoHandler" class="coffeepot.br.sintegra.typeHandler.FinalidadeArquivoHandler" />
+        <typeHandler name="naturezaOperacaoHandler" class="coffeepot.br.sintegra.typeHandler.NaturezaOperacaoHandler" />
+        <typeHandler name="documentoFiscalHandler" class="coffeepot.br.sintegra.typeHandler.DocumentoFiscalHandler" />
+        <typeHandler name="emitenteHandler" class="coffeepot.br.sintegra.typeHandler.EmitenteHandler" />
+        <typeHandler name="doubleScale2Handler" class="coffeepot.br.sintegra.typeHandler.DoubleScale2Handler" />
+        <typeHandler name="doubleScale3Handler" class="coffeepot.br.sintegra.typeHandler.DoubleScale3Handler" />
+        <typeHandler name="situacaoDocumentoFiscalHandler" class="coffeepot.br.sintegra.typeHandler.SituacaoDocumentoFiscalHandler" />
+        <typeHandler name="stringNumberOnlyHandler" class="coffeepot.br.sintegra.typeHandler.StringNumberOnlyHandler" />
+        <typeHandler name="codigoDePosseHandler" class="coffeepot.br.sintegra.typeHandler.CodigoDePosseHandler" />
+        
+        <record name="registro10" minOccurs="1" maxOccurs="1" class="coffeepot.br.sintegra.registros.Registro10">
+            <field name="recordType" rid="true" literal="10" ignore="true"/>
+            <field name="cnpj" typeHandler="stringNumberOnlyHandler" length="14" justify="right" padding="0"/>
+            <field name="ie" type="string" length="14" justify="left" padding=" "/>
+            <field name="razaoSocial" type="string" length="35" justify="left" padding=" "/>
+            <field name="cidade" type="string" length="30" justify="left" padding=" "/>
+            <field name="uf" type="string" length="2" justify="left" padding=" "/>
+            <field name="fax" typeHandler="stringNumberOnlyHandler" length="10" justify="right" padding="0"/>
+            <field name="dataInicial" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="dataFinal" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="codigoConvenio" type="char" length="1" justify="left" padding=" "/>
+            <field name="naturezaOperacao" typeHandler="naturezaOperacaoHandler" length="1" justify="left" padding=" "/>
+            <field name="finalidadeArquivo" typeHandler="finalidadeArquivoHandler" length="1" justify="left" padding=" "/>
+        </record>
+        
+        <record name="registro11" minOccurs="1" maxOccurs="1" class="coffeepot.br.sintegra.registros.Registro11">
+            <field name="recordType" rid="true" literal="11" ignore="true"/>
+            <field name="logradouro" type="string" length="34" justify="left" padding=" "/>
+            <field name="numero" type="int" length="5" justify="right" padding="0"/>
+            <field name="complemento" type="string" length="22" justify="left" padding=" "/>
+            <field name="bairro" type="string" length="15" justify="left" padding=" "/>
+            <field name="cep" typeHandler="stringNumberOnlyHandler" length="8" justify="right" padding="0" />
+            <field name="responsavel" type="string" length="28" justify="left" padding=" "/>
+            <field name="telefone" typeHandler="stringNumberOnlyHandler" length="12" justify="right" padding="0" />
+        </record>
+        
+        <record name="registro50" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro50">
+            <field name="recordType" rid="true" literal="50" ignore="true"/>
+            <field name="cpfCnpj" typeHandler="stringNumberOnlyHandler" length="14" justify="right" padding="0" />
+            <field name="ie" type="string" length="14" justify="left" padding=" "/>
+            <field name="dataDocumento" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="uf" type="string" length="2" justify="left" padding=" "/>
+            <field name="modeloDocumento" typeHandler="documentoFiscalHandler" length="2" justify="right" padding="0"/>
+            <field name="serieDocumento" type="string" length="3" justify="left" padding=" "/>
+            <field name="numeroDocumento" type="int" length="6" justify="right" padding="0"/>
+            <field name="cfop" type="int" length="4" justify="right" padding="0"/>            
+            <field name="emitente" typeHandler="emitenteHandler" length="1" justify="left" padding=" "/>            
+            <field name="valorTotal" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="baseDeCalculoIcms" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="valorIcms" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="valorIsentas" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="valorOutras" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="aliquotaIcms" typeHandler="doubleScale2Handler" length="4" justify="right" padding="0"/>
+            <field name="situacaoDocumento" typeHandler="situacaoDocumentoFiscalHandler" length="1" justify="left" padding=" "/>
+        </record> 
+        
+        <record name="registro51" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro51">
+            <field name="recordType" rid="true" literal="51" ignore="true"/>
+            <field name="cpfCnpj" typeHandler="stringNumberOnlyHandler" length="14" justify="right" padding="0"/>
+            <field name="ie" type="string" length="14" justify="left" padding=" "/>
+            <field name="dataDocumento" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="uf" type="string" length="2" justify="left" padding=" "/>
+            <field name="serieDocumento" type="string" length="3" justify="left" padding=" "/>
+            <field name="numeroDocumento" type="int" length="6" justify="right" padding="0"/>
+            <field name="cfop" type="int" length="4" justify="right" padding="0"/>
+            <field name="valorTotal" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="valorIpi" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="valorIsentas" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="valorOutras" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="spacer" length="20" literal=" " padding=" " ignore="true"/>
+            <field name="situacaoDocumento" typeHandler="situacaoDocumentoFiscalHandler" length="1" justify="left" padding=" "/>
+        </record>
+        
+        <record name="registro53" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro53">
+            <field name="recordType" rid="true" literal="53" ignore="true"/>
+            <field name="cnpj" typeHandler="stringNumberOnlyHandler" length="14" justify="right" padding="0"/>
+            <field name="ie" type="string" length="14" justify="left" padding=" "/>
+            <field name="dataDocumento" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="uf" type="string" length="2" justify="left" padding=" "/>
+            <field name="modeloDocumento" typeHandler="documentoFiscalHandler" length="2" justify="right" padding="0"/>
+            <field name="serieDocumento" type="string" length="3" justify="left" padding=" "/>
+            <field name="numeroDocumento" type="int" length="6" justify="right" padding="0"/>
+            <field name="cfop" type="int" length="4" justify="right" padding="0"/>            
+            <field name="emitente" typeHandler="emitenteHandler" length="1" justify="left" padding=" "/>    
+            <field name="baseST" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="icmsRetido" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="despesas" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="situacaoDocumento" typeHandler="situacaoDocumentoFiscalHandler" length="1" justify="left" padding=" "/>
+            <field name="codigoAntecipacao" type="char" length="1" justify="left" padding=" "/>
+            <field name="spacer" length="29" literal=" " padding=" " ignore="true"/>
+        </record>          
+        
+        <record name="registro54" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro54">
+            <field name="recordType" rid="true" literal="54" ignore="true"/>
+            <field name="cpfCnpj" typeHandler="stringNumberOnlyHandler" length="14" justify="right" padding="0"/>
+            <field name="modeloDocumento" typeHandler="documentoFiscalHandler" length="2" justify="right" padding="0"/>
+            <field name="serieDocumento" type="string" length="3" justify="left" padding=" "/>
+            <field name="numeroDocumento" type="int" length="6" justify="right" padding="0"/>
+            <field name="cfop" type="int" length="4" justify="right" padding="0"/>
+            <field name="cst" type="string" length="3" justify="left" padding=" "/>
+            <field name="numeroItem" type="int" length="3" justify="right" padding="0"/>
+            <field name="codigoProduto" type="string" length="14" justify="left" padding=" "/>
+            <field name="quantidade" typeHandler="doubleScale3Handler" length="11" justify="right" padding="0"/>
+            <field name="valorBrutoItem" typeHandler="doubleScale2Handler" length="12" justify="right" padding="0"/>
+            <field name="valorDesconto" typeHandler="doubleScale2Handler"  length="12" justify="right" padding="0"/>
+            <field name="basedeCalculoIcms" typeHandler="doubleScale2Handler" length="12" justify="right" padding="0"/>
+            <field name="baseDeCalculoIcmsST" typeHandler="doubleScale2Handler"  length="12"  justify="right" padding="0"/>
+            <field name="valorIpi" typeHandler="doubleScale2Handler"  length="12"  justify="right" padding="0"/>
+            <field name="aliquotaIcms" typeHandler="doubleScale2Handler"  length="4"  justify="right" padding="0"/>
+        </record>           
+                
+        <record name="registro55" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro55">
+            <field name="recordType" rid="true" literal="55" ignore="true"/>
+            <field name="cnpjSubstituto" typeHandler="stringNumberOnlyHandler" length="14" justify="right" padding="0" />
+            <field name="ieSubstituto" type="string" length="14" justify="left" padding=" "/>
+            <field name="dataPagamento" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="ufSubstituto" type="string" length="2" justify="left" padding=" "/>
+            <field name="ufFavorecida" type="string" length="2" justify="left" padding=" "/>
+            <field name="bancoGnre" type="int" length="3" justify="right" padding="0"/>
+            <field name="agenciaGnre" type="int" length="4" justify="right" padding="0"/>
+            <field name="numeroAutenticacao" type="string" length="20" justify="left" padding=" "/>
+            <field name="valorRecolhido" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="dataPagamento" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="mesAnoReferencia" type="string" length="6" justify="right" padding="0"/>
+            <field name="numeroConvenio" type="string" length="30" justify="right" padding=" "/>            
+        </record>                       
+                
+        <group name="registros60M" minOccurs="0" maxOccurs="unbounded">
+            <record name="registro60M" minOccurs="1" maxOccurs="1" class="coffeepot.br.sintegra.registros.Registro60M">
+                <field name="recordType" rid="true" literal="60M" ignore="true"/>
+                <field name="dataEmissao" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+                <field name="numeroSerieEquipamento" type="string" length="20" justify="left" padding=" "/>
+                <field name="numeroOrdem" type="int" length="3" justify="right" padding="0"/>            
+                <field name="modeloDocumento" type="string" length="2" justify="left" padding=" "/>
+                <field name="cooInicial" type="int" length="6" justify="right" padding="0"/>  
+                <field name="cooFinal" type="int" length="6" justify="right" padding="0"/>  
+                <field name="crz" type="int" length="6" justify="right" padding="0"/>  
+                <field name="cro" type="int" length="3" justify="right" padding="0"/>  
+                <field name="vendaBruta" typeHandler="doubleScale2Handler" length="16" justify="right" padding="0"/>
+                <field name="valorGT" typeHandler="doubleScale2Handler" length="16" justify="right" padding="0"/>
+                <field name="spacer" type="string" length="37" literal=" " padding=" " ignore="true"/>                            
+            </record>  
+            <record name="registros60A" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro60A">
+                <field name="recordType" rid="true" literal="60A" ignore="true"/>                                
+                <field name="dataEmissao" type="date" length="8" justify="right" padding="0" format="yyyyMMdd" />
+                <field name="numeroSerieEquipamento" type="string" length="20" justify="left" padding=" "/>
+                <field name="totalizadorParcial" type="string" length="4" justify="left" padding=" "/>
+                <field name="valorAcumulado" typeHandler="doubleScale2Handler" length="12" justify="right" padding="0"/>
+                <field name="spacer" type="string" length="79" literal=" " ignore="true" padding=" "/>
+            </record>
+            <record name="registros60D" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro60D">
+                <field name="recordType" rid="true" literal="60D" ignore="true"/> 
+                <field name="dataEmissao" type="date" length="8" justify="right" padding="0" format="yyyyMMdd" />
+                <field name="numeroSerieEquipamento" type="string" length="20" justify="left" padding=" "/>
+                <field name="codigoProduto" type="string" length="14" justify="left" padding=" "/>
+                <field name="quantidade" typeHandler="doubleScale3Handler" length="13" justify="right" padding="0"/>
+                <field name="valorLiquido" typeHandler="doubleScale2Handler" length="16" justify="right" padding="0"/>
+                <field name="baseDeCalculoIcms" typeHandler="doubleScale2Handler" length="16" justify="right" padding="0"/>
+                <field name="totalizadorParcial" type="string" length="4" justify="left" padding=" "/>
+                <field name="valorIcms" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+                <field name="spacer" type="string" length="19" literal=" " ignore="true" padding=" "/>
+            </record>
+            <record name="registros60I" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro60I">
+                <field name="recordType" rid="true" literal="60I" ignore="true"/> 
+                <field name="dataEmissao" type="date" length="8" justify="right" padding="0" format="yyyyMMdd" />
+                <field name="numeroSerieEquipamento" type="string" length="20" justify="left" padding=" "/>
+                <field name="modeloDocumento" type="string" length="2" justify="left" padding=" "/>
+                <field name="coo" type="int" length="6" justify="right" padding="0"/>
+                <field name="numeroItem" type="int" length="3" justify="right" padding="0"/>
+                <field name="codigoProduto" type="string" length="14" justify="left" padding=" "/>
+                <field name="quantidade" typeHandler="doubleScale3Handler" length="13" justify="right" padding="0"/>
+                <field name="valorLiquido" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+                <field name="baseDeCalculoIcms" typeHandler="doubleScale2Handler" length="12" justify="right" padding="0"/>
+                <field name="totalizadorParcial" type="string" length="4" justify="left" padding=" "/>
+                <field name="valorIcms" typeHandler="doubleScale2Handler" length="12" justify="right" padding="0"/>
+                <field name="spacer" type="string" length="16" literal=" " ignore="true" padding=" "/>
+            </record>
+        </group>        
+        <record name="registro60R" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro60R">
+            <field name="recordType" rid="true" literal="60R" ignore="true"/> 
+            <field name="mesAno" type="string" length="6" justify="right" padding="0"/>
+            <field name="codigoProduto" type="string" length="14" justify="left" padding=" "/>
+            <field name="quantidade" typeHandler="doubleScale3Handler" length="13" justify="right" padding="0"/>
+            <field name="valorLiquidoProduto" typeHandler="doubleScale2Handler" length="16" justify="right" padding="0"/>
+            <field name="baseDeCalculoIcms" typeHandler="doubleScale2Handler" length="16" justify="right" padding="0"/>
+            <field name="totalizadorParcial" type="string" length="4" justify="left" padding=" "/>
+            <field name="spacer" type="string" length="54" literal=" " ignore="true" padding=" "/>
+        </record>
+        
+        <record name="registro61" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro61">
+            <field name="recordType" rid="true" literal="61" ignore="true"/> 
+            <field name="spacer" type="string" length="14" literal=" " ignore="true" padding=" "/>
+            <field name="spacer1" type="string" length="14" literal=" " ignore="true" padding=" "/>
+            <field name="dataEmissao" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="modeloDocumento" typeHandler="documentoFiscalHandler" length="2" justify="right" padding="0"/>
+            <field name="serieDocumento" type="string" length="3" justify="left" padding=" "/>
+            <field name="subSerieDocumento" type="string" length="2" justify="left" padding=" "/>
+            <field name="numeroOrdemInicial" type="int" length="6" justify="right" padding="0"/>
+            <field name="numeroOrdemFinal" type="int" length="6" justify="right" padding="0"/>
+            <field name="valorTotal" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="totalBaseDeCalculoIcms" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="valorTotalIcms" typeHandler="doubleScale2Handler" length="12" justify="right" padding="0"/>
+            <field name="valorTotalIsentas" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="valorTotalOutras" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="aliquotaIcms" typeHandler="doubleScale2Handler" length="4" justify="right" padding="0"/>
+            <field name="spacer2" type="string" length="1" literal=" " ignore="true" padding=" "/>
+        </record> 
+        
+        <record name="registro61R" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro61R">
+            <field name="recordType" rid="true" literal="61R" ignore="true"/> 
+            <field name="mesAno" type="string" length="6" justify="right" padding="0"/>
+            <field name="codigoProduto" type="string" length="14" justify="left" padding=" "/>
+            <field name="quantidade" typeHandler="doubleScale3Handler" length="13" justify="right" padding="0"/>
+            <field name="valorBrutoProduto" typeHandler="doubleScale2Handler" length="16" justify="right" padding="0"/>
+            <field name="baseDeCalculoIcms" typeHandler="doubleScale2Handler" length="16" justify="right" padding="0"/>
+            <field name="aliquotaIcms" typeHandler="doubleScale2Handler" length="4" justify="right" padding="0"/>
+            <field name="spacer" type="string" length="54" literal=" " ignore="true" padding=" "/>
+        </record>  
+        
+        <record name="registro74" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro74">
+            <field name="recordType" rid="true" literal="74" ignore="true"/> 
+            <field name="dataInventario" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="codigoProduto" type="string" length="14" justify="left" padding=" "/>
+            <field name="quantidade" typeHandler="doubleScale3Handler" length="13" justify="right" padding="0"/>
+            <field name="valorTotalProduto" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+            <field name="codigoPosse" typeHandler="codigoDePosseHandler" length="1" justify="left" padding=" "/>
+            <field name="cnpjPossuidor" typeHandler="stringNumberOnlyHandler" length="14" justify="right" padding="0"/>
+            <field name="iePossuidor" type="string" length="14" justify="left" padding=" "/>
+            <field name="ufPossuidor" type="string" length="2" justify="left" padding=" "/>            
+            <field name="spacer" type="string" length="45" literal=" " ignore="true" padding=" "/>
+        </record>     
+        
+        <record name="registro75" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro75">
+            <field name="recordType" rid="true" literal="75" ignore="true"/> 
+            <field name="dataInicial" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="dataFinal" type="date" length="8" justify="right" padding="0" format="yyyyMMdd"/>
+            <field name="codigoProduto" type="string" length="14" justify="left" padding=" "/>
+            <field name="ncm" typeHandler="stringNumberOnlyHandler" length="8" justify="left" padding=" "/>
+            <field name="descricaoProduto" type="string" length="53" justify="left" padding=" "/>
+            <field name="unidade" type="string" length="6" justify="left" padding=" "/>
+            <field name="aliquotaIpi" typeHandler="doubleScale2Handler" length="5"  justify="right" padding="0"/>
+            <field name="aliquotaIcms" typeHandler="doubleScale2Handler" length="4"  justify="right" padding="0"/>
+            <field name="percentualReducaoBaseCalculoIcms" typeHandler="doubleScale2Handler" length="5" justify="right" padding="0"/>
+            <field name="baseCalculoIcmsST" typeHandler="doubleScale2Handler" length="13" justify="right" padding="0"/>
+        </record>   
+        
+        <record name="registro5o90" minOccurs="0" maxOccurs="unbounded" class="coffeepot.br.sintegra.registros.Registro90">
+            <field name="recordType" rid="true" literal="90" ignore="true"/> 
+            <field name="cnpj" typeHandler="stringNumberOnlyHandler" length="14" justify="right" padding="0"/>
+            <field name="ie" type="string" length="14" justify="left" padding=" "/>
+            <field name="totalizadores" type="string" length="95" justify="left" padding=" "/>
+            <field name="quantidadeR90" type="int" length="1" justify="right" padding="0"/>
+        </record>                                                                              
+    </stream>
+</beanio>
