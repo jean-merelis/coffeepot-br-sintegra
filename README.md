@@ -7,12 +7,18 @@ Este projeto é um mapeamento de classes Java para formatação e gravação do 
 
 Projeto baseado em Maven. Utilizando JDK 1.7
 
+
 Dependência: coffeepot-bean-wr - 
 	https://github.com/jom76/coffeepot-bean-wr
 	
 Documentação técnica e layout:
   http://www.sefaz.es.gov.br/LegislacaoOnline/lpext.dll/InfobaseLegislacaoOnline/ricms%20-%20dec%201090-r/08%20-%20anexos/090-anexo%20xxxvi.htm?fn=document-frame.htm&f=templates&2.0	
 
+Download jar file: 
+	https://sourceforge.net/projects/coffeepotbrsint/
+
+Download coffeepot-bean-wr jar file: 
+	https://sourceforge.net/projects/coffeepotbeanwr/  
 
 Exemplo:
 
