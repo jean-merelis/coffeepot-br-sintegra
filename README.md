@@ -39,7 +39,3 @@ Exemplo:
  
 		sintegraWriter.writerFlush();
         sintegraWriter.writerClose();
-		
-
-
-Jeandeson O. Merelis. <jean.merelis@gmail.com>

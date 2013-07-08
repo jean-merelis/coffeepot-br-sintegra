@@ -3,6 +3,27 @@
  */
 package coffeepot.br.sintegra.registros;
 
+/*
+ * #%L
+ * coffeepot-br-sintegra
+ * %%
+ * Copyright (C) 2013 Jeandeson O. Merelis
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
+
 import coffeepot.bean.wr.anotation.Field;
 import coffeepot.bean.wr.anotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
@@ -53,7 +74,7 @@ public class Registro50 {
     private String serieDocumento;
     private String cpfCnpj;
     private DocumentoFiscal modeloDocumento;
-    private int numeroDocumento;
+    private Long numeroDocumento;
     private Date dataDocumento;
     private List<Registro54> registros54 = new ArrayList<>();
     private List<Registro56> registros56 = new ArrayList<>();
@@ -122,11 +143,11 @@ public class Registro50 {
         this.modeloDocumento = modeloDocumento;
     }
 
-    public int getNumeroDocumento() {
+    public Long getNumeroDocumento() {
         return numeroDocumento;
     }
 
-    public void setNumeroDocumento(int numeroDocumento) {
+    public void setNumeroDocumento(Long numeroDocumento) {
         this.numeroDocumento = numeroDocumento;
     }
 

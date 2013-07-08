@@ -3,10 +3,32 @@
  */
 package coffeepot.br.sintegra.registros;
 
+/*
+ * #%L
+ * coffeepot-br-sintegra
+ * %%
+ * Copyright (C) 2013 Jeandeson O. Merelis
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
+
 import coffeepot.bean.wr.anotation.Field;
 import coffeepot.bean.wr.anotation.Record;
 import coffeepot.bean.wr.typeHandler.DefaultStringHandler;
 import coffeepot.bean.wr.types.Align;
+import coffeepot.br.sintegra.tipos.Convenio;
 import coffeepot.br.sintegra.tipos.FinalidadeArquivo;
 import coffeepot.br.sintegra.tipos.NaturezaOperacao;
 import java.util.Date;
@@ -31,7 +53,7 @@ import java.util.Date;
 })
 public class Registro10 {
 
-    private char codigoConvenio = '2';
+    private Convenio codigoConvenio;
     private FinalidadeArquivo finalidadeArquivo = FinalidadeArquivo.NORMAL;
     private NaturezaOperacao naturezaOperacao = NaturezaOperacao.TOTALIDADE_DAS_OPERACOES;
     private String razaoSocial;
@@ -43,11 +65,11 @@ public class Registro10 {
     private Date dataFinal;
     private String fax;
 
-    public char getCodigoConvenio() {
+    public Convenio getCodigoConvenio() {
         return codigoConvenio;
     }
 
-    public void setCodigoConvenio(char codigoConvenio) {
+    public void setCodigoConvenio(Convenio codigoConvenio) {
         this.codigoConvenio = codigoConvenio;
     }
 

@@ -3,6 +3,27 @@
  */
 package coffeepot.br.sintegra;
 
+/*
+ * #%L
+ * coffeepot-br-sintegra
+ * %%
+ * Copyright (C) 2013 Jeandeson O. Merelis
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
+
 import coffeepot.br.sintegra.registros.Registro10;
 import coffeepot.br.sintegra.registros.Registro11;
 import coffeepot.br.sintegra.registros.Registro50;
@@ -100,7 +121,7 @@ public class SintegraTest {
         r50.setEmitente(Emitente.PROPRIO);
         r50.setIe("mais ié");
         r50.setModeloDocumento(DocumentoFiscal.NOTA_FISCAL);
-        r50.setNumeroDocumento(1);
+        r50.setNumeroDocumento(1L);
         r50.setSerieDocumento("1");
         r50.setSituacaoDocumento(SituacaoDocumentoFiscal.NORMAL);
         r50.setUf("ES");
@@ -117,7 +138,7 @@ public class SintegraTest {
         r50.setEmitente(Emitente.PROPRIO);
         r50.setIe("mais ié");
         r50.setModeloDocumento(DocumentoFiscal.CONHECIMENTO_TRANSPORTE_FERROVIARIO_CARGAS);
-        r50.setNumeroDocumento(1);
+        r50.setNumeroDocumento(1L);
         r50.setSerieDocumento("1");
         r50.setSituacaoDocumento(SituacaoDocumentoFiscal.CANCELADO);
         r50.setUf("ES");
