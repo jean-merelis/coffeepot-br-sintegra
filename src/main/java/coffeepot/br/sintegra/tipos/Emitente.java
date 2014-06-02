@@ -23,13 +23,13 @@ package coffeepot.br.sintegra.tipos;
 
 /**
  *
- * @author Jeandeson O. Merelis <jean.merelis@gmail.com>
+ * @author Jeandeson O. Merelis
  */
 public enum Emitente implements EnumCodificado {
 
     PROPRIO('P'),
     TERCEIROS('T');
-    private char codigo;
+    private final char codigo;
 
     private Emitente(char codigo) {
         this.codigo = codigo;

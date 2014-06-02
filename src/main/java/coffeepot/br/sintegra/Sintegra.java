@@ -24,8 +24,8 @@ package coffeepot.br.sintegra;
  */
 
 
-import coffeepot.bean.wr.anotation.Field;
-import coffeepot.bean.wr.anotation.Record;
+import coffeepot.bean.wr.annotation.Field;
+import coffeepot.bean.wr.annotation.Record;
 import coffeepot.br.sintegra.registros.*;
 import java.util.Collections;
 import java.util.Comparator;

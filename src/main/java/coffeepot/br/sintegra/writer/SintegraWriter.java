@@ -22,8 +22,6 @@ package coffeepot.br.sintegra.writer;
  * limitations under the License.
  * #L%
  */
-
-
 import coffeepot.bean.wr.writer.ObjectWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -34,7 +32,7 @@ import java.io.Writer;
  */
 public class SintegraWriter {
 
-    private ObjectWriter beanWriter;
+    private final ObjectWriter beanWriter;
 
     public SintegraWriter(Writer w) {
         this.beanWriter = WriterFactory.createObjectWriter(w);
@@ -49,11 +47,9 @@ public class SintegraWriter {
     }
 
     /**
-     * Escreve o objeto no arquivo, obedecendo a formatação que foi mapeada na
-     * classe.
+     * Escreve o objeto no arquivo, obedecendo a formatação que foi mapeada na classe.
      *
-     * @param obj Objeto a ser analizado e escrito no arquivo. Este objeto deve
-     * ser mapeado com as anotações {@link coffeepot.bean.wr.anotation.Record} e
+     * @param obj Objeto a ser analizado e escrito no arquivo. Este objeto deve ser mapeado com as anotações {@link coffeepot.bean.wr.anotation.Record} e
      * {@link coffeepot.bean.wr.anotation.Field}
      * @throws IOException
      */
@@ -66,7 +62,7 @@ public class SintegraWriter {
      *
      * @throws IOException
      */
-    public void writerFlush() throws IOException {
+    public void flush() throws IOException {
         beanWriter.flush();
     }
 
@@ -75,7 +71,7 @@ public class SintegraWriter {
      *
      * @throws IOException
      */
-    public void writerClose() throws IOException {
-        beanWriter.getWriter().close();
+    public void close() throws IOException {
+        beanWriter.close();
     }
 }

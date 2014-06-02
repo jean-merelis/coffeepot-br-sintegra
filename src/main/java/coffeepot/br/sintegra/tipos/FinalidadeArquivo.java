@@ -29,7 +29,7 @@ package coffeepot.br.sintegra.tipos;
  * 5 - Desfazimento: arquivo de informação referente a operações/prestações não efetivadas . Neste caso, o arquivo deverá <br />
  *      conter, além dos registros tipo 10 e tipo 90, apenas os registros Referentes as operações/prestações não efetivadas.
  *
- * @author Jeandeson O. Merelis <jean.merelis@gmail.com>
+ * @author Jeandeson O. Merelis
  */
 public enum FinalidadeArquivo  implements EnumCodificado{
     NORMAL(1, "1 - Normal"),
@@ -37,8 +37,8 @@ public enum FinalidadeArquivo  implements EnumCodificado{
     RETIFICACAO_ADITIVA(3, "3 - Retificação aditiva de arquivo: acréscimo de informação não incluída em arquivos já apresentados"),
     DESFAZIMENTO(5, "5 - Desfazimento: arquivo de informação referente a operações/prestações não efetivadas");
     
-    private int codigo;
-    private String descricao;
+    private final int codigo;
+    private final String descricao;
     
     private FinalidadeArquivo(int codigo, String descricao){
         this.codigo = codigo;

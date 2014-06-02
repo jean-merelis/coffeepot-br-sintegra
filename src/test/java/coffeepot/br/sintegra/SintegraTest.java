@@ -666,8 +666,8 @@ public class SintegraTest {
 
             sintegraWriter.write(sintegra);
 
-            sintegraWriter.writerFlush();
-            sintegraWriter.writerClose();
+            sintegraWriter.flush();
+            sintegraWriter.close();
         } catch (IOException ex) {
             Logger.getLogger(SintegraTest.class.getName()).log(Level.SEVERE, null, ex);
         }

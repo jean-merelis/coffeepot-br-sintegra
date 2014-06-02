@@ -39,7 +39,7 @@ package coffeepot.br.sintegra.tipos;
  * Nota Fiscal Eletrônica - Modelo 55 e Conhecimento de Transporte Eletrônico,
  * Modelo 57.
  *
- * @author Jeandeson O. Merelis <jean.merelis@gmail.com>
+ * @author Jeandeson O. Merelis
  */
 public enum SituacaoDocumentoFiscal implements EnumCodificado {
 
@@ -49,7 +49,7 @@ public enum SituacaoDocumentoFiscal implements EnumCodificado {
     LANC_EXTEMPORANEO_DOC_CANCELADO("X"),
     USO_DENEGADO("2"),
     INUTILIZADO("4");
-    private String codigo;
+    private final String codigo;
 
     private SituacaoDocumentoFiscal(String codigo) {
         this.codigo = codigo;

@@ -23,14 +23,14 @@ package coffeepot.br.sintegra.tipos;
 
 /**
  *
- * @author Jeandeson O. Merelis <jean.merelis@gmail.com>
+ * @author Jeandeson O. Merelis
  */
 public enum Frete implements EnumCodificado {
 
     CIF(1),
     FOB(2),
     OUTROS(0);
-    private int codigo;
+    private final int codigo;
 
     private Frete(int codigo) {
         this.codigo = codigo;

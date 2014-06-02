@@ -34,8 +34,8 @@ public enum Convenio implements EnumCodificado {
     CONV_1_5795_3002("1", "1 - Convênio 57/95 Versão 31/99 Alt. 30/02"),
     CONV_2_5795_14202("2", "2 - Convênio 57/95 Versão 69/02 Alt. 142/02"),
     CONV_3_5795_7603("3", "3 - Convênio 57/95 Alt. 76/03");
-    private String codigo;
-    private String descricao;
+    private final String codigo;
+    private final String descricao;
 
     private Convenio(String codigo, String descricao) {
         this.codigo = codigo;

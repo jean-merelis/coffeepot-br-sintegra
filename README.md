@@ -37,5 +37,5 @@ Exemplo:
 		//Escrever o objeto no arquivo
         sintegraWriter.write(sintegra);		
  
-		sintegraWriter.writerFlush();
-        sintegraWriter.writerClose();
+		sintegraWriter.flush();
+        sintegraWriter.close();

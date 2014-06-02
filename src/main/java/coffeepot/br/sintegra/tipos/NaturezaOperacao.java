@@ -29,15 +29,15 @@ package coffeepot.br.sintegra.tipos;
  * Tributária . 2 -Interestaduais - operações com ou sem Substituição
  * Tributária. 3 -Totalidade das operações do informante.
  *
- * @author Jeandeson O. Merelis <jean.merelis@gmail.com>
+ * @author Jeandeson O. Merelis
  */
 public enum NaturezaOperacao implements EnumCodificado {
 
     INTERESTADUAL_OPER_SUJEITAS_REGIME_ST(1, "1 - Interestaduais - Somente operações sujeitas à Substituição Tributária"),
     INTERESTADUAL_OPER_COM_OU_SEM_ST(2, "2 - Interestaduais - Operações com ou sem Substituição Tributária"),
     TOTALIDADE_DAS_OPERACOES(3, "3 - Totalidade das operações do informante");
-    private int codigo;
-    private String descricao;
+    private final int codigo;
+    private final String descricao;
 
     private NaturezaOperacao(int codigo, String descricao) {
         this.codigo = codigo;
