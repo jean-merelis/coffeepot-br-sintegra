@@ -49,8 +49,8 @@ public class SintegraWriter {
     /**
      * Escreve o objeto no arquivo, obedecendo a formatação que foi mapeada na classe.
      *
-     * @param obj Objeto a ser analizado e escrito no arquivo. Este objeto deve ser mapeado com as anotações {@link coffeepot.bean.wr.anotation.Record} e
-     * {@link coffeepot.bean.wr.anotation.Field}
+     * @param obj Objeto a ser analizado e escrito no arquivo. Este objeto deve ser mapeado com as anotações {@link coffeepot.bean.wr.annotation.Record} e
+     * {@link coffeepot.bean.wr.annotation.Field}
      * @throws IOException
      */
     public void write(Object obj) throws IOException {
