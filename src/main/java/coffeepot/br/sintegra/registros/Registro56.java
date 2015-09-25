@@ -12,9 +12,9 @@ package coffeepot.br.sintegra.registros;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -47,8 +47,8 @@ import coffeepot.br.sintegra.tipos.EnumCodificado;
     @Field(name = "codigoProduto", length = 14),
     @Field(name = "tipoOperacao", length = 1),
     @Field(name = "cnpjConcessionaria", length = 14, padding = '0', align = Align.RIGHT, params = DefaultStringHandler.PARAM_FILTER_NUMBER_ONLY),
-    @Field(name = "AliquotaIpi", length = 4, padding = '0', align = Align.RIGHT, params = "scale=2"),
-    @Field(name = "AliquotaIpi", length = 17),
+    @Field(name = "aliquotaIpi", length = 4, padding = '0', align = Align.RIGHT, params = "scale=2"),
+    @Field(name = "chassi", length = 17),
     @Field(name = "spacer", length = 39, constantValue = " ")
 })
 public class Registro56 {
@@ -80,7 +80,7 @@ public class Registro56 {
     private String codigoProduto;
     private TipoOperacao tipoOperacao;
     private String cnpjConcessionaria;
-    private Double AliquotaIpi;
+    private Double aliquotaIpi;
     private String chassi;
 
     public String getCpfCnpj() {
@@ -164,11 +164,11 @@ public class Registro56 {
     }
 
     public Double getAliquotaIpi() {
-        return AliquotaIpi;
+        return aliquotaIpi;
     }
 
     public void setAliquotaIpi(Double AliquotaIpi) {
-        this.AliquotaIpi = AliquotaIpi;
+        this.aliquotaIpi = AliquotaIpi;
     }
 
     public String getChassi() {
