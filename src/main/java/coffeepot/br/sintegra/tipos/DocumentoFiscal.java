@@ -48,6 +48,7 @@ public enum DocumentoFiscal implements EnumCodificado {
     NOTA_FISCAL_SERVICO_TRANSPORTE(7, "Nota Fiscal de Serviço de Transporte, modelo 7"),
     NOTA_FISCAL_SERVICO_TRANSPORTE_FERROVIARIO(27, "Nota Fiscal de Serviço de Transporte Ferroviário, modelo 27"),
     NOTA_FISCAL_VENDA_CONSUMIDOR(2, "Nota Fiscal de Venda a Consumidor, modelo 02"),
+    NOTA_FISCAL_CONSUMIDOR_ELETRONICA_VENDA(65, "Nota Fiscal Consumidor Eletronica de Venda, modelo 65"),
     ORDEM_COLETA_CARGA(20, "Ordem de Coleta de Carga, modelo 20"),
     RESUMO_MOVIMENTO_DIARIO(18, "Resumo Movimento Diário, modelo 18");
 
